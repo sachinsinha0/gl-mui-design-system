@@ -26,7 +26,7 @@ export default function SelectionControlsShowcase() {
       <Typography variant="subtitle2" sx={{ mb: 2 }}>
         Checkboxes
       </Typography>
-      <Stack direction="row" spacing={4} flexWrap="wrap" useFlexGap sx={{ mb: 4 }}>
+      <Stack direction="row" spacing={4} sx={{ flexWrap: 'wrap', mb: 4 }}>
         <FormGroup>
           <FormControlLabel control={<Checkbox defaultChecked />} label="Checked" />
           <FormControlLabel control={<Checkbox />} label="Unchecked" />
@@ -46,7 +46,7 @@ export default function SelectionControlsShowcase() {
       <Typography variant="subtitle2" sx={{ mb: 2 }}>
         Radio Buttons
       </Typography>
-      <Stack direction="row" spacing={4} flexWrap="wrap" useFlexGap sx={{ mb: 4 }}>
+      <Stack direction="row" spacing={4} sx={{ flexWrap: 'wrap', mb: 4 }}>
         <FormControl>
           <FormLabel>Plan</FormLabel>
           <RadioGroup defaultValue="pro" row>
@@ -62,7 +62,7 @@ export default function SelectionControlsShowcase() {
       <Typography variant="subtitle2" sx={{ mb: 2 }}>
         Switches
       </Typography>
-      <Stack direction="row" spacing={4} flexWrap="wrap" useFlexGap sx={{ mb: 4 }}>
+      <Stack direction="row" spacing={4} sx={{ flexWrap: 'wrap', mb: 4 }}>
         <FormGroup row>
           <FormControlLabel control={<Switch defaultChecked />} label="On" />
           <FormControlLabel control={<Switch />} label="Off" />

@@ -31,7 +31,7 @@ export default function ButtonsShowcase() {
       <Typography variant="subtitle2" sx={{ mb: 2 }}>
         Contained
       </Typography>
-      <Stack direction="row" spacing={2} flexWrap="wrap" useFlexGap sx={{ mb: 4 }}>
+      <Stack direction="row" spacing={2} sx={{ flexWrap: 'wrap', mb: 4 }}>
         {COLORS.map((color) => (
           <Button key={color} variant="contained" color={color}>
             {color}
@@ -49,7 +49,7 @@ export default function ButtonsShowcase() {
       <Typography variant="subtitle2" sx={{ mb: 2 }}>
         Outlined
       </Typography>
-      <Stack direction="row" spacing={2} flexWrap="wrap" useFlexGap sx={{ mb: 4 }}>
+      <Stack direction="row" spacing={2} sx={{ flexWrap: 'wrap', mb: 4 }}>
         {COLORS.map((color) => (
           <Button key={color} variant="outlined" color={color}>
             {color}
@@ -64,7 +64,7 @@ export default function ButtonsShowcase() {
       <Typography variant="subtitle2" sx={{ mb: 2 }}>
         Text
       </Typography>
-      <Stack direction="row" spacing={2} flexWrap="wrap" useFlexGap sx={{ mb: 4 }}>
+      <Stack direction="row" spacing={2} sx={{ flexWrap: 'wrap', mb: 4 }}>
         {COLORS.map((color) => (
           <Button key={color} variant="text" color={color}>
             {color}
@@ -79,7 +79,7 @@ export default function ButtonsShowcase() {
       <Typography variant="subtitle2" sx={{ mb: 2 }}>
         Sizes
       </Typography>
-      <Stack direction="row" spacing={2} alignItems="center" sx={{ mb: 4 }}>
+      <Stack direction="row" spacing={2} sx={{ alignItems: 'center', mb: 4 }}>
         <Button variant="contained" size="small">Small</Button>
         <Button variant="contained" size="medium">Medium</Button>
         <Button variant="contained" size="large">Large</Button>
@@ -89,7 +89,7 @@ export default function ButtonsShowcase() {
       <Typography variant="subtitle2" sx={{ mb: 2 }}>
         Icon Buttons
       </Typography>
-      <Stack direction="row" spacing={2} alignItems="center" sx={{ mb: 4 }}>
+      <Stack direction="row" spacing={2} sx={{ alignItems: 'center', mb: 4 }}>
         <IconButton color="primary"><EditIcon /></IconButton>
         <IconButton color="error"><DeleteIcon /></IconButton>
         <IconButton color="primary" disabled><AddIcon /></IconButton>
@@ -105,7 +105,7 @@ export default function ButtonsShowcase() {
       <Typography variant="subtitle2" sx={{ mb: 2 }}>
         Floating Action Buttons
       </Typography>
-      <Stack direction="row" spacing={2} alignItems="center" sx={{ mb: 4 }}>
+      <Stack direction="row" spacing={2} sx={{ alignItems: 'center', mb: 4 }}>
         <Fab color="primary" size="small"><AddIcon /></Fab>
         <Fab color="primary"><AddIcon /></Fab>
         <Fab color="primary" variant="extended">
@@ -118,7 +118,7 @@ export default function ButtonsShowcase() {
       <Typography variant="subtitle2" sx={{ mb: 2 }}>
         Button Groups
       </Typography>
-      <Stack direction="row" spacing={2} flexWrap="wrap" useFlexGap sx={{ mb: 4 }}>
+      <Stack direction="row" spacing={2} sx={{ flexWrap: 'wrap', mb: 4 }}>
         <ButtonGroup variant="contained">
           <Button>One</Button>
           <Button>Two</Button>

@@ -78,9 +78,10 @@ export default function ComponentsPage() {
       <Stack
         direction="row"
         spacing={1}
-        flexWrap="wrap"
-        useFlexGap
         sx={{
+          flexWrap: 'wrap',
+          alignItems: 'center',
+          gap: 1,
           mb: 5,
           position: 'sticky',
           top: 0,

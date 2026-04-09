@@ -36,19 +36,19 @@ export default function DataDisplayShowcase() {
       <Typography variant="subtitle2" sx={{ mb: 2 }}>
         Avatars
       </Typography>
-      <Stack direction="row" spacing={2} alignItems="center" sx={{ mb: 2 }}>
+      <Stack direction="row" spacing={2} sx={{ alignItems: 'center', mb: 2 }}>
         <Avatar sx={{ bgcolor: 'primary.main' }}>A</Avatar>
         <Avatar sx={{ bgcolor: 'error.main' }}>B</Avatar>
         <Avatar sx={{ bgcolor: 'warning.main' }}>C</Avatar>
         <Avatar sx={{ bgcolor: 'success.main' }}>D</Avatar>
         <Avatar sx={{ bgcolor: 'info.main' }}>E</Avatar>
       </Stack>
-      <Stack direction="row" spacing={2} alignItems="center" sx={{ mb: 2 }}>
+      <Stack direction="row" spacing={2} sx={{ alignItems: 'center', mb: 2 }}>
         <Avatar sx={{ width: 24, height: 24, fontSize: 12, bgcolor: 'primary.main' }}>S</Avatar>
         <Avatar sx={{ bgcolor: 'primary.main' }}>M</Avatar>
         <Avatar sx={{ width: 56, height: 56, bgcolor: 'primary.main' }}>L</Avatar>
       </Stack>
-      <Stack direction="row" spacing={2} alignItems="center" sx={{ mb: 4 }}>
+      <Stack direction="row" spacing={2} sx={{ alignItems: 'center', mb: 4 }}>
         <AvatarGroup max={4}>
           <Avatar sx={{ bgcolor: 'primary.main' }}>A</Avatar>
           <Avatar sx={{ bgcolor: 'error.main' }}>B</Avatar>

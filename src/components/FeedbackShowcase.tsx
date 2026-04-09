@@ -58,7 +58,7 @@ export default function FeedbackShowcase() {
       <Typography variant="subtitle2" sx={{ mb: 2 }}>
         Circular Progress
       </Typography>
-      <Stack direction="row" spacing={3} alignItems="center" sx={{ mb: 4 }}>
+      <Stack direction="row" spacing={3} sx={{ alignItems: 'center', mb: 4 }}>
         <CircularProgress size={24} />
         <CircularProgress />
         <CircularProgress size={56} />
@@ -85,7 +85,7 @@ export default function FeedbackShowcase() {
         Skeletons
       </Typography>
       <Box sx={{ maxWidth: 400, mb: 4 }}>
-        <Stack direction="row" spacing={2} alignItems="center" sx={{ mb: 2 }}>
+        <Stack direction="row" spacing={2} sx={{ alignItems: 'center', mb: 2 }}>
           <Skeleton variant="circular" width={40} height={40} />
           <Box sx={{ flex: 1 }}>
             <Skeleton variant="text" sx={{ fontSize: '16px' }} />
@@ -100,7 +100,7 @@ export default function FeedbackShowcase() {
       <Typography variant="subtitle2" sx={{ mb: 2 }}>
         Badges
       </Typography>
-      <Stack direction="row" spacing={4} alignItems="center" sx={{ mb: 4 }}>
+      <Stack direction="row" spacing={4} sx={{ alignItems: 'center', mb: 4 }}>
         <Badge badgeContent={4} color="primary">
           <MailIcon color="action" />
         </Badge>
