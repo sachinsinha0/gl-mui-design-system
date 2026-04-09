@@ -5,6 +5,7 @@ import DashboardPage from './pages/DashboardPage';
 import GetStartedPage from './pages/GetStartedPage';
 import FoundationsPage from './pages/FoundationsPage';
 import ComponentsPage from './pages/ComponentsPage';
+import ToolsPage from './pages/ToolsPage';
 
 export default function App() {
   return (
@@ -16,6 +17,7 @@ export default function App() {
             <Route path="/get-started" element={<GetStartedPage />} />
             <Route path="/foundations" element={<FoundationsPage />} />
             <Route path="/components" element={<ComponentsPage />} />
+            <Route path="/tools" element={<ToolsPage />} />
           </Route>
         </Routes>
       </BrowserRouter>

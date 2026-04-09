@@ -328,7 +328,7 @@ export default function GetStartedPage() {
                   <Typography variant="subtitle2">Install the theme</Typography>
                 </StepLabel>
                 <StepContent>
-                  <CodeBlock>npm install @sachinsinha0/olympus-theme</CodeBlock>
+                  <CodeBlock>npm i @sachinsinha1/olympus-theme</CodeBlock>
                 </StepContent>
               </Step>
 
@@ -338,7 +338,7 @@ export default function GetStartedPage() {
                 </StepLabel>
                 <StepContent>
                   <CodeBlock>{`import { ThemeProvider } from '@mui/material/styles';
-import { lightTheme } from '@sachinsinha0/olympus-theme';
+import { lightTheme } from '@sachinsinha1/olympus-theme';
 
 function App() {
   return (

@@ -11,6 +11,7 @@ import HomeOutlinedIcon from '@mui/icons-material/HomeOutlined';
 import RocketLaunchOutlinedIcon from '@mui/icons-material/RocketLaunchOutlined';
 import PaletteOutlinedIcon from '@mui/icons-material/PaletteOutlined';
 import WidgetsOutlinedIcon from '@mui/icons-material/WidgetsOutlined';
+import BuildOutlinedIcon from '@mui/icons-material/BuildOutlined';
 import Brightness4Icon from '@mui/icons-material/Brightness4';
 import Brightness7Icon from '@mui/icons-material/Brightness7';
 import { useThemeMode } from '../theme';
@@ -24,6 +25,7 @@ const NAV_ITEMS = [
   { label: 'Get Started', path: '/get-started', icon: <RocketLaunchOutlinedIcon /> },
   { label: 'Foundations', path: '/foundations', icon: <PaletteOutlinedIcon /> },
   { label: 'Components', path: '/components', icon: <WidgetsOutlinedIcon /> },
+  { label: 'Tools', path: '/tools', icon: <BuildOutlinedIcon /> },
 ];
 
 // ─── Collapsed nav item ─────────────────────────────────────────────────────
