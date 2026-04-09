@@ -146,7 +146,7 @@ function TokenCard({
         {description}
       </Typography>
       <Box sx={{ display: 'flex', alignItems: 'center', gap: 0.5, mt: 1.5, color: 'primary.main' }}>
-        <Typography variant="caption" fontWeight={600}>View tokens</Typography>
+        <Typography variant="caption" sx={{ fontWeight: 600 }}>View tokens</Typography>
         <ArrowForwardIcon sx={{ fontSize: 14 }} />
       </Box>
     </Card>
@@ -458,7 +458,7 @@ function App() {
               ].map((row) => (
                 <TableRow key={row.name} hover>
                   <TableCell>
-                    <Typography variant="body2" fontWeight={500}>{row.name}</Typography>
+                    <Typography variant="body2" sx={{ fontWeight: 500 }}>{row.name}</Typography>
                   </TableCell>
                   <TableCell>
                     <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
@@ -523,7 +523,7 @@ function App() {
               ].map((row) => (
                 <TableRow key={row.variant} hover>
                   <TableCell>
-                    <Typography variant="body2" fontWeight={500}>{row.style}</Typography>
+                    <Typography variant="body2" sx={{ fontWeight: 500 }}>{row.style}</Typography>
                   </TableCell>
                   <TableCell>
                     <Typography variant="caption" sx={{ fontFamily: 'monospace' }}>{row.size}</Typography>
@@ -685,7 +685,7 @@ function App() {
               ].map((row) => (
                 <TableRow key={row.figma} hover>
                   <TableCell>
-                    <Typography variant="body2" fontWeight={500}>{row.figma}</Typography>
+                    <Typography variant="body2" sx={{ fontWeight: 500 }}>{row.figma}</Typography>
                   </TableCell>
                   <TableCell>
                     <Chip

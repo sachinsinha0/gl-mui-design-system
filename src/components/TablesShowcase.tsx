@@ -53,7 +53,7 @@ export default function TablesShowcase() {
             {ROWS.map((row) => (
               <TableRow key={row.id} hover>
                 <TableCell>
-                  <Typography variant="body2" fontWeight={500}>{row.name}</Typography>
+                  <Typography variant="body2" sx={{ fontWeight: 500 }}>{row.name}</Typography>
                 </TableCell>
                 <TableCell>{row.email}</TableCell>
                 <TableCell>{row.role}</TableCell>

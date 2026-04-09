@@ -152,7 +152,7 @@ export default function ColorPaletteShowcase() {
         <Grid container spacing={2}>
           <Grid size={{ xs: 12, sm: 6 }}>
             <Box sx={{ bgcolor: 'background.default', p: 3, borderRadius: 2, border: 1, borderColor: 'divider' }}>
-              <Typography variant="body2" fontWeight={500}>Default</Typography>
+              <Typography variant="body2" sx={{ fontWeight: 500 }}>Default</Typography>
               <Typography variant="caption" color="text.secondary" sx={{ fontFamily: 'monospace', fontSize: '0.6875rem' }}>
                 background.default
               </Typography>
@@ -160,7 +160,7 @@ export default function ColorPaletteShowcase() {
           </Grid>
           <Grid size={{ xs: 12, sm: 6 }}>
             <Box sx={{ bgcolor: 'background.paper', p: 3, borderRadius: 2, border: 1, borderColor: 'divider' }}>
-              <Typography variant="body2" fontWeight={500}>Paper</Typography>
+              <Typography variant="body2" sx={{ fontWeight: 500 }}>Paper</Typography>
               <Typography variant="caption" color="text.secondary" sx={{ fontFamily: 'monospace', fontSize: '0.6875rem' }}>
                 background.paper
               </Typography>
@@ -192,7 +192,7 @@ export default function ColorPaletteShowcase() {
                 '&:hover': { flex: 2 },
               }}
             >
-              <Typography variant="caption" fontWeight={600} sx={{ fontSize: '0.625rem' }}>
+              <Typography variant="caption" sx={{ fontWeight: 600, fontSize: '0.625rem' }}>
                 {shade}
               </Typography>
             </Box>
