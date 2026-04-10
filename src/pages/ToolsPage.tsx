@@ -10,11 +10,9 @@ import AlertTitle from '@mui/material/AlertTitle';
 import DesktopMacOutlinedIcon from '@mui/icons-material/DesktopMacOutlined';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import ScreenshotMonitorOutlinedIcon from '@mui/icons-material/ScreenshotMonitorOutlined';
-import BrushOutlinedIcon from '@mui/icons-material/BrushOutlined';
 import CodeOutlinedIcon from '@mui/icons-material/CodeOutlined';
 import SendOutlinedIcon from '@mui/icons-material/SendOutlined';
 import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
-import ContentCopyOutlinedIcon from '@mui/icons-material/ContentCopyOutlined';
 
 const DESIGN_MIRROR_FEATURES = [
   {
