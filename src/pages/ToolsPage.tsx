@@ -8,43 +8,72 @@ import Divider from '@mui/material/Divider';
 import Alert from '@mui/material/Alert';
 import AlertTitle from '@mui/material/AlertTitle';
 import DesktopMacOutlinedIcon from '@mui/icons-material/DesktopMacOutlined';
-import AppleIcon from '@mui/icons-material/Apple';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import ScreenshotMonitorOutlinedIcon from '@mui/icons-material/ScreenshotMonitorOutlined';
 import BrushOutlinedIcon from '@mui/icons-material/BrushOutlined';
-import SpeedOutlinedIcon from '@mui/icons-material/SpeedOutlined';
-import CloudOffOutlinedIcon from '@mui/icons-material/CloudOffOutlined';
+import CodeOutlinedIcon from '@mui/icons-material/CodeOutlined';
+import SendOutlinedIcon from '@mui/icons-material/SendOutlined';
+import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
+import ContentCopyOutlinedIcon from '@mui/icons-material/ContentCopyOutlined';
 
 const DESIGN_MIRROR_FEATURES = [
   {
     icon: <ScreenshotMonitorOutlinedIcon sx={{ fontSize: 22, color: 'primary.main' }} />,
-    title: 'Full-page capture',
-    description: 'Captures entire web pages including below-the-fold content with pixel-perfect accuracy.',
+    title: 'URL capture',
+    description: 'Capture any web page — localhost dev servers or live sites — with pixel-perfect accuracy.',
   },
   {
-    icon: <BrushOutlinedIcon sx={{ fontSize: 22, color: 'success.main' }} />,
-    title: 'Push to Figma',
-    description: 'Send captures directly into your Figma file — no manual screenshots or imports needed.',
+    icon: <SendOutlinedIcon sx={{ fontSize: 22, color: 'success.main' }} />,
+    title: 'Auto-paste to Figma',
+    description: 'Send captures directly into a specific Figma file and node. No manual copy-paste needed.',
   },
   {
-    icon: <SpeedOutlinedIcon sx={{ fontSize: 22, color: 'warning.main' }} />,
-    title: 'Fast & lightweight',
-    description: 'Native macOS app built for performance. No browser extensions or heavy dependencies.',
+    icon: <CodeOutlinedIcon sx={{ fontSize: 22, color: 'warning.main' }} />,
+    title: 'HTML to Figma',
+    description: 'Paste raw HTML code or upload .html files and push them as designs into your Figma file.',
   },
   {
-    icon: <CloudOffOutlinedIcon sx={{ fontSize: 22, color: 'info.main' }} />,
-    title: 'No AI required',
-    description: 'Works entirely offline — no Claude, no API keys, no cloud processing needed.',
+    icon: <LockOutlinedIcon sx={{ fontSize: 22, color: 'info.main' }} />,
+    title: 'Google Auth',
+    description: 'Sign in with Google to track usage and prepare for future team features.',
   },
 ];
 
-const DOWNLOAD_URL = 'https://github.com/sachinsinha0/design-mirror/releases/download/v1.0/Design.Mirror.dmg';
 const GITHUB_URL = 'https://github.com/sachinsinha0/design-mirror';
+
+function CodeBlock({ children }: { children: string }) {
+  return (
+    <Box
+      component="pre"
+      sx={{
+        bgcolor: (theme) => (theme.palette.mode === 'light' ? '#1e1e2e' : '#111118'),
+        color: '#e0e0e0',
+        borderRadius: 2,
+        px: 2.5,
+        py: 2,
+        fontSize: '0.8125rem',
+        fontFamily: '"SF Mono", "Fira Code", "Consolas", monospace',
+        lineHeight: 1.8,
+        overflow: 'auto',
+        border: '1px solid',
+        borderColor: 'rgba(255,255,255,0.06)',
+        position: 'relative',
+      }}
+    >
+      <Box
+        component="code"
+        sx={{ whiteSpace: 'pre-wrap', wordBreak: 'break-all' }}
+      >
+        {children}
+      </Box>
+    </Box>
+  );
+}
 
 export default function ToolsPage() {
   return (
     <Box sx={{ animation: 'fadeIn 0.5s ease-out' }}>
-      {/* ── Header ────────────────────────────────────────────────────── */}
+      {/* Header */}
       <Box
         sx={(theme) => ({
           borderRadius: 3,
@@ -74,7 +103,7 @@ export default function ToolsPage() {
         </Typography>
       </Box>
 
-      {/* ── Design Mirror ─────────────────────────────────────────────── */}
+      {/* Design Mirror */}
       <Card
         elevation={0}
         sx={{
@@ -120,9 +149,15 @@ export default function ToolsPage() {
                     Design Mirror
                   </Typography>
                   <Chip
-                    label="v1.0"
+                    label="v1.1"
                     size="small"
                     color="primary"
+                    variant="outlined"
+                    sx={{ height: 22, fontSize: '0.6875rem' }}
+                  />
+                  <Chip
+                    label="macOS"
+                    size="small"
                     variant="outlined"
                     sx={{ height: 22, fontSize: '0.6875rem' }}
                   />
@@ -133,28 +168,17 @@ export default function ToolsPage() {
               </Box>
             </Box>
 
-            <Box sx={{ display: 'flex', gap: 1.5, flexWrap: 'wrap' }}>
-              <Button
-                variant="contained"
-                size="medium"
-                startIcon={<AppleIcon />}
-                href={DOWNLOAD_URL}
-                sx={{ textTransform: 'none', borderRadius: 2, fontWeight: 600 }}
-              >
-                Download for Mac
-              </Button>
-              <Button
-                variant="outlined"
-                size="medium"
-                startIcon={<GitHubIcon />}
-                href={GITHUB_URL}
-                target="_blank"
-                rel="noopener noreferrer"
-                sx={{ textTransform: 'none', borderRadius: 2 }}
-              >
-                View Source
-              </Button>
-            </Box>
+            <Button
+              variant="outlined"
+              size="medium"
+              startIcon={<GitHubIcon />}
+              href={GITHUB_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              sx={{ textTransform: 'none', borderRadius: 2 }}
+            >
+              View on GitHub
+            </Button>
           </Box>
         </Box>
 
@@ -194,16 +218,21 @@ export default function ToolsPage() {
 
           <Divider sx={{ mb: 4 }} />
 
-          {/* How to install */}
+          {/* Install via Homebrew */}
           <Typography variant="overline" color="text.secondary" sx={{ mb: 2.5, display: 'block' }}>
-            Installation
+            Install via Homebrew
           </Typography>
-          <Box sx={{ mb: 4 }}>
+          <Typography variant="body2" color="text.secondary" sx={{ mb: 2, lineHeight: 1.7 }}>
+            Design Mirror is distributed via Homebrew. Run these commands in your terminal:
+          </Typography>
+          <CodeBlock>{`brew tap sachinsinha0/design-mirror\nbrew install --cask design-mirror`}</CodeBlock>
+
+          <Box sx={{ mt: 3, mb: 4 }}>
             {[
-              { step: '1', title: 'Download the DMG', desc: 'Click "Download for Mac" above to get the latest .dmg file.' },
-              { step: '2', title: 'Install the app', desc: 'Open the DMG and drag Design Mirror to your Applications folder.' },
-              { step: '3', title: 'Open & allow permissions', desc: 'On first launch, macOS may ask you to allow the app. Go to System Settings > Privacy & Security to approve it.' },
-              { step: '4', title: 'Connect to Figma', desc: 'Enter your Figma file URL inside the app and start capturing pages.' },
+              { step: '1', title: 'Install via Homebrew', desc: 'Run the commands above in your terminal. The app will be installed to /Applications automatically.' },
+              { step: '2', title: 'Open the app', desc: 'Launch Design Mirror from Applications. Sign in with your Google account on first launch.' },
+              { step: '3', title: 'Connect to Figma', desc: 'The app connects to Figma automatically via MCP. Authorize when prompted in your browser.' },
+              { step: '4', title: 'Start capturing', desc: 'Enter a URL or paste HTML, choose Clipboard or Figma File as destination, and capture.' },
             ].map((item) => (
               <Box
                 key={item.step}
@@ -242,17 +271,34 @@ export default function ToolsPage() {
             ))}
           </Box>
 
-          {/* System requirements */}
-          <Alert severity="info" variant="outlined" sx={{ borderRadius: 2 }}>
-            <AlertTitle>System requirements</AlertTitle>
-            <Typography variant="body2" color="text.secondary">
-              macOS 13 (Ventura) or later. Apple Silicon and Intel Macs supported.
-            </Typography>
-          </Alert>
+          <Divider sx={{ mb: 4 }} />
+
+          {/* Update */}
+          <Typography variant="overline" color="text.secondary" sx={{ mb: 2, display: 'block' }}>
+            Update to latest version
+          </Typography>
+          <CodeBlock>{`brew upgrade design-mirror`}</CodeBlock>
+
+          <Divider sx={{ my: 4 }} />
+
+          {/* Uninstall */}
+          <Typography variant="overline" color="text.secondary" sx={{ mb: 2, display: 'block' }}>
+            Uninstall
+          </Typography>
+          <CodeBlock>{`brew uninstall --cask design-mirror`}</CodeBlock>
+
+          <Box sx={{ mt: 4 }}>
+            <Alert severity="info" variant="outlined" sx={{ borderRadius: 2 }}>
+              <AlertTitle>System requirements</AlertTitle>
+              <Typography variant="body2" color="text.secondary">
+                macOS 12 (Monterey) or later. Apple Silicon and Intel Macs supported. Requires Node.js installed on the system.
+              </Typography>
+            </Alert>
+          </Box>
         </Box>
       </Card>
 
-      {/* ── More tools coming soon ─────────────────────────────────────── */}
+      {/* More tools coming soon */}
       <Box
         sx={{
           textAlign: 'center',
