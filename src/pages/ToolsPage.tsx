@@ -3,16 +3,14 @@ import Typography from '@mui/material/Typography';
 import Card from '@mui/material/Card';
 import Grid from '@mui/material/Grid';
 import Chip from '@mui/material/Chip';
-import Button from '@mui/material/Button';
 import Divider from '@mui/material/Divider';
 import Alert from '@mui/material/Alert';
 import AlertTitle from '@mui/material/AlertTitle';
-import DesktopMacOutlinedIcon from '@mui/icons-material/DesktopMacOutlined';
-import GitHubIcon from '@mui/icons-material/GitHub';
 import ScreenshotMonitorOutlinedIcon from '@mui/icons-material/ScreenshotMonitorOutlined';
 import CodeOutlinedIcon from '@mui/icons-material/CodeOutlined';
 import SendOutlinedIcon from '@mui/icons-material/SendOutlined';
 import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
+import designMirrorLogo from '../../design-mirror-logo.svg';
 
 const DESIGN_MIRROR_FEATURES = [
   {
@@ -37,7 +35,6 @@ const DESIGN_MIRROR_FEATURES = [
   },
 ];
 
-const GITHUB_URL = 'https://github.com/sachinsinha0/design-mirror';
 
 function CodeBlock({ children }: { children: string }) {
   return (
@@ -128,19 +125,15 @@ export default function ToolsPage() {
           <Box sx={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'space-between', flexWrap: 'wrap', gap: 2 }}>
             <Box sx={{ display: 'flex', alignItems: 'center', gap: 2 }}>
               <Box
+                component="img"
+                src={designMirrorLogo}
+                alt="Design Mirror"
                 sx={{
                   width: 56,
                   height: 56,
                   borderRadius: 3,
-                  bgcolor: 'primary.main',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  boxShadow: 2,
                 }}
-              >
-                <DesktopMacOutlinedIcon sx={{ color: 'common.white', fontSize: 28 }} />
-              </Box>
+              />
               <Box>
                 <Box sx={{ display: 'flex', alignItems: 'center', gap: 1.5, mb: 0.5 }}>
                   <Typography variant="h3" sx={{ fontWeight: 700 }}>
@@ -166,17 +159,6 @@ export default function ToolsPage() {
               </Box>
             </Box>
 
-            <Button
-              variant="outlined"
-              size="medium"
-              startIcon={<GitHubIcon />}
-              href={GITHUB_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              sx={{ textTransform: 'none', borderRadius: 2 }}
-            >
-              View on GitHub
-            </Button>
           </Box>
         </Box>
 
