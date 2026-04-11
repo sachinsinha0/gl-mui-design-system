@@ -147,7 +147,7 @@ export default function ToolsPage() {
                     Design Mirror
                   </Typography>
                   <Chip
-                    label="v1.1"
+                    label="v1.2"
                     size="small"
                     color="primary"
                     variant="outlined"
@@ -221,7 +221,11 @@ export default function ToolsPage() {
             Install via Homebrew
           </Typography>
           <Typography variant="body2" color="text.secondary" sx={{ mb: 2, lineHeight: 1.7 }}>
-            Design Mirror is distributed via Homebrew. Run these commands in your terminal:
+            Design Mirror is distributed via Homebrew. If you don't have Homebrew installed, open Terminal and run this first:
+          </Typography>
+          <CodeBlock>{`/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"`}</CodeBlock>
+          <Typography variant="body2" color="text.secondary" sx={{ mt: 2.5, mb: 2, lineHeight: 1.7 }}>
+            Then install Design Mirror:
           </Typography>
           <CodeBlock>{`brew tap sachinsinha0/design-mirror\nbrew install --cask design-mirror`}</CodeBlock>
 
@@ -275,7 +279,7 @@ export default function ToolsPage() {
           <Typography variant="overline" color="text.secondary" sx={{ mb: 2, display: 'block' }}>
             Update to latest version
           </Typography>
-          <CodeBlock>{`brew upgrade design-mirror`}</CodeBlock>
+          <CodeBlock>{`brew update\nbrew upgrade --cask design-mirror`}</CodeBlock>
 
           <Divider sx={{ my: 4 }} />
 
@@ -289,7 +293,7 @@ export default function ToolsPage() {
             <Alert severity="info" variant="outlined" sx={{ borderRadius: 2 }}>
               <AlertTitle>System requirements</AlertTitle>
               <Typography variant="body2" color="text.secondary">
-                macOS 12 (Monterey) or later. Apple Silicon and Intel Macs supported. Requires Node.js installed on the system.
+                macOS 12 (Monterey) or later. Apple Silicon and Intel Macs supported. Google Chrome (or Edge/Brave) required for the capture feature. Node.js is bundled — no separate install needed.
               </Typography>
             </Alert>
           </Box>
