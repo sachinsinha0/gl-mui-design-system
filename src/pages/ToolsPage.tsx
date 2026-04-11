@@ -125,15 +125,25 @@ export default function ToolsPage() {
           <Box sx={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'space-between', flexWrap: 'wrap', gap: 2 }}>
             <Box sx={{ display: 'flex', alignItems: 'center', gap: 2 }}>
               <Box
-                component="img"
-                src={designMirrorLogo}
-                alt="Design Mirror"
                 sx={{
                   width: 56,
                   height: 56,
                   borderRadius: 3,
+                  bgcolor: 'common.white',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  p: 1,
+                  boxShadow: '0 1px 3px rgba(0,0,0,0.1)',
                 }}
-              />
+              >
+                <Box
+                  component="img"
+                  src={designMirrorLogo}
+                  alt="Design Mirror"
+                  sx={{ width: 36, height: 36 }}
+                />
+              </Box>
               <Box>
                 <Box sx={{ display: 'flex', alignItems: 'center', gap: 1.5, mb: 0.5 }}>
                   <Typography variant="h3" sx={{ fontWeight: 700 }}>
