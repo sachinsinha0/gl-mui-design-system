@@ -10,7 +10,14 @@ import ScreenshotMonitorOutlinedIcon from '@mui/icons-material/ScreenshotMonitor
 import CodeOutlinedIcon from '@mui/icons-material/CodeOutlined';
 import SendOutlinedIcon from '@mui/icons-material/SendOutlined';
 import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
+import PaletteOutlinedIcon from '@mui/icons-material/PaletteOutlined';
+import TextFieldsOutlinedIcon from '@mui/icons-material/TextFieldsOutlined';
+import LibraryBooksOutlinedIcon from '@mui/icons-material/LibraryBooksOutlined';
+import SearchOutlinedIcon from '@mui/icons-material/SearchOutlined';
+import LinkOutlinedIcon from '@mui/icons-material/LinkOutlined';
+import FileDownloadOutlinedIcon from '@mui/icons-material/FileDownloadOutlined';
 import designMirrorLogo from '../../design-mirror-logo.svg';
+import mirrorLinkLogo from '../../mirror-link-logo.svg';
 
 const DESIGN_MIRROR_FEATURES = [
   {
@@ -32,6 +39,39 @@ const DESIGN_MIRROR_FEATURES = [
     icon: <LockOutlinedIcon sx={{ fontSize: 22, color: 'info.main' }} />,
     title: 'Google Auth',
     description: 'Sign in with Google to track usage and prepare for future team features.',
+  },
+];
+
+const MIRROR_LINK_FEATURES = [
+  {
+    icon: <PaletteOutlinedIcon sx={{ fontSize: 22, color: 'primary.main' }} />,
+    title: 'Color token scanning',
+    description: 'Detects fills and strokes not bound to color variables or paint styles in your design system.',
+  },
+  {
+    icon: <TextFieldsOutlinedIcon sx={{ fontSize: 22, color: 'success.main' }} />,
+    title: 'Text style detection',
+    description: 'Finds unlinked typography and suggests matching text styles from your library.',
+  },
+  {
+    icon: <LibraryBooksOutlinedIcon sx={{ fontSize: 22, color: 'warning.main' }} />,
+    title: 'Multi-library support',
+    description: 'Connect multiple design system libraries. Just paste the Figma URL — names are extracted automatically.',
+  },
+  {
+    icon: <SearchOutlinedIcon sx={{ fontSize: 22, color: 'secondary.main' }} />,
+    title: 'Smart matching',
+    description: 'Uses CIELAB color distance and font weight scoring with confidence levels: Exact, High, Medium, Low.',
+  },
+  {
+    icon: <LinkOutlinedIcon sx={{ fontSize: 22, color: 'info.main' }} />,
+    title: 'Bulk linking',
+    description: 'Select matched tokens and link them all to your design system in one click.',
+  },
+  {
+    icon: <FileDownloadOutlinedIcon sx={{ fontSize: 22, color: 'error.main' }} />,
+    title: 'CSV export',
+    description: 'Export scan results as a CSV report for team review and tracking.',
   },
 ];
 
@@ -98,7 +138,9 @@ export default function ToolsPage() {
         </Typography>
       </Box>
 
+      {/* ================================================================ */}
       {/* Design Mirror */}
+      {/* ================================================================ */}
       <Card
         elevation={0}
         sx={{
@@ -286,6 +328,216 @@ export default function ToolsPage() {
               <AlertTitle>System requirements</AlertTitle>
               <Typography variant="body2" color="text.secondary">
                 macOS 12 (Monterey) or later. Apple Silicon and Intel Macs supported. Google Chrome (or Edge/Brave) required for the capture feature. Node.js is bundled — no separate install needed.
+              </Typography>
+            </Alert>
+          </Box>
+        </Box>
+      </Card>
+
+      {/* ================================================================ */}
+      {/* Mirror Link */}
+      {/* ================================================================ */}
+      <Card
+        elevation={0}
+        sx={{
+          borderRadius: 3,
+          border: '1px solid',
+          borderColor: 'divider',
+          overflow: 'hidden',
+          mb: 5,
+        }}
+      >
+        {/* Tool header */}
+        <Box
+          sx={(theme) => ({
+            px: { xs: 3, md: 4 },
+            py: { xs: 3, md: 4 },
+            background:
+              theme.palette.mode === 'light'
+                ? 'linear-gradient(135deg, rgba(91,172,255,0.06) 0%, rgba(16,67,201,0.03) 100%)'
+                : 'linear-gradient(135deg, rgba(91,172,255,0.10) 0%, rgba(16,67,201,0.04) 100%)',
+            borderBottom: '1px solid',
+            borderColor: 'divider',
+          })}
+        >
+          <Box sx={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'space-between', flexWrap: 'wrap', gap: 2 }}>
+            <Box sx={{ display: 'flex', alignItems: 'center', gap: 2 }}>
+              <Box
+                sx={{
+                  width: 56,
+                  height: 56,
+                  borderRadius: 3,
+                  bgcolor: 'common.white',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  p: 1,
+                  boxShadow: '0 1px 3px rgba(0,0,0,0.1)',
+                }}
+              >
+                <Box
+                  component="img"
+                  src={mirrorLinkLogo}
+                  alt="Mirror Link"
+                  sx={{ width: 36, height: 36 }}
+                />
+              </Box>
+              <Box>
+                <Box sx={{ display: 'flex', alignItems: 'center', gap: 1.5, mb: 0.5 }}>
+                  <Typography variant="h3" sx={{ fontWeight: 700 }}>
+                    Mirror Link
+                  </Typography>
+                  <Chip
+                    label="v0.1"
+                    size="small"
+                    color="primary"
+                    variant="outlined"
+                    sx={{ height: 22, fontSize: '0.6875rem' }}
+                  />
+                  <Chip
+                    label="Figma Plugin"
+                    size="small"
+                    variant="outlined"
+                    sx={{ height: 22, fontSize: '0.6875rem' }}
+                  />
+                </Box>
+                <Typography variant="body2" color="text.secondary">
+                  Detect and relink broken design tokens to your design system — Figma plugin
+                </Typography>
+              </Box>
+            </Box>
+          </Box>
+        </Box>
+
+        {/* Tool content */}
+        <Box sx={{ px: { xs: 3, md: 4 }, py: { xs: 3, md: 4 } }}>
+          {/* How it works */}
+          <Typography variant="overline" color="text.secondary" sx={{ mb: 2.5, display: 'block' }}>
+            How it works
+          </Typography>
+          <Typography variant="body2" color="text.secondary" sx={{ mb: 3, lineHeight: 1.7 }}>
+            When designs are imported into Figma — via Design Mirror, copy-paste, or any other method — design tokens
+            often get broken. Colors show as raw hex values instead of linked variables, and text appears as raw font specs
+            instead of linked text styles. Mirror Link scans your designs, finds these broken connections, and helps you
+            relink them to your design system.
+          </Typography>
+
+          {/* Features grid */}
+          <Typography variant="overline" color="text.secondary" sx={{ mb: 2.5, display: 'block' }}>
+            Features
+          </Typography>
+          <Grid container spacing={2} sx={{ mb: 4 }}>
+            {MIRROR_LINK_FEATURES.map((feature) => (
+              <Grid size={{ xs: 12, sm: 6 }} key={feature.title}>
+                <Box
+                  sx={{
+                    display: 'flex',
+                    gap: 1.5,
+                    p: 2.5,
+                    borderRadius: 2,
+                    border: '1px solid',
+                    borderColor: 'divider',
+                    height: '100%',
+                    transition: 'border-color 0.15s ease',
+                    '&:hover': { borderColor: 'primary.main' },
+                  }}
+                >
+                  <Box sx={{ mt: 0.25, flexShrink: 0 }}>{feature.icon}</Box>
+                  <Box>
+                    <Typography variant="subtitle2" sx={{ mb: 0.25 }}>{feature.title}</Typography>
+                    <Typography variant="caption" color="text.secondary" sx={{ lineHeight: 1.6 }}>
+                      {feature.description}
+                    </Typography>
+                  </Box>
+                </Box>
+              </Grid>
+            ))}
+          </Grid>
+
+          <Divider sx={{ mb: 4 }} />
+
+          {/* Install */}
+          <Typography variant="overline" color="text.secondary" sx={{ mb: 2.5, display: 'block' }}>
+            Install from Figma
+          </Typography>
+          <Box sx={{ mb: 4 }}>
+            {[
+              { step: '1', title: 'Install the plugin', desc: 'Search for "Mirror Link" in Figma\'s plugin browser (Plugins > Search), or visit the Figma Community page and click Install.' },
+              { step: '2', title: 'Generate a Figma API token', desc: 'Go to figma.com/settings, scroll to Personal Access Tokens, and generate a new token. This is needed to fetch text styles from your library.' },
+              { step: '3', title: 'Add your design system library', desc: 'Open the plugin, go to Settings, and paste the Figma URL of your design system library. The library name is extracted automatically.' },
+              { step: '4', title: 'Scan your page', desc: 'Click Scan to detect all unlinked colors and text styles. Review the results — each match shows a confidence level.' },
+              { step: '5', title: 'Link tokens', desc: 'Select the tokens you want to link, confirm, and they\'re reconnected to your design system. For text styles, use Select to highlight nodes on canvas, then apply the style from Figma\'s Design panel.' },
+            ].map((item) => (
+              <Box
+                key={item.step}
+                sx={{
+                  display: 'flex',
+                  gap: 2,
+                  mb: 2.5,
+                  '&:last-child': { mb: 0 },
+                }}
+              >
+                <Box
+                  sx={{
+                    width: 28,
+                    height: 28,
+                    borderRadius: '50%',
+                    bgcolor: 'primary.main',
+                    color: 'common.white',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    fontSize: '0.75rem',
+                    fontWeight: 700,
+                    flexShrink: 0,
+                    mt: 0.25,
+                  }}
+                >
+                  {item.step}
+                </Box>
+                <Box>
+                  <Typography variant="subtitle2">{item.title}</Typography>
+                  <Typography variant="body2" color="text.secondary" sx={{ lineHeight: 1.7 }}>
+                    {item.desc}
+                  </Typography>
+                </Box>
+              </Box>
+            ))}
+          </Box>
+
+          <Divider sx={{ mb: 4 }} />
+
+          {/* Works with Design Mirror */}
+          <Typography variant="overline" color="text.secondary" sx={{ mb: 2, display: 'block' }}>
+            Works with Design Mirror
+          </Typography>
+          <Typography variant="body2" color="text.secondary" sx={{ mb: 2, lineHeight: 1.7 }}>
+            Mirror Link is designed to pair with Design Mirror. The typical workflow:
+          </Typography>
+          <Box sx={{ mb: 4 }}>
+            {[
+              { step: '1', text: 'Use Design Mirror to capture a web page and push it into Figma' },
+              { step: '2', text: 'Open Mirror Link — it auto-detects the import and starts scanning' },
+              { step: '3', text: 'Review matched tokens and link them back to your design system' },
+            ].map((item) => (
+              <Box key={item.step} sx={{ display: 'flex', gap: 2, mb: 1.5, '&:last-child': { mb: 0 } }}>
+                <Typography variant="body2" sx={{ fontWeight: 700, color: 'primary.main', flexShrink: 0 }}>
+                  {item.step}.
+                </Typography>
+                <Typography variant="body2" color="text.secondary" sx={{ lineHeight: 1.7 }}>
+                  {item.text}
+                </Typography>
+              </Box>
+            ))}
+          </Box>
+
+          <Box sx={{ mt: 4 }}>
+            <Alert severity="info" variant="outlined" sx={{ borderRadius: 2 }}>
+              <AlertTitle>Works with any design system</AlertTitle>
+              <Typography variant="body2" color="text.secondary">
+                Mirror Link is not tied to any specific design system. It works with Material Design, Tailwind,
+                custom token libraries, or any design system published as a Figma library. Just paste your library URL
+                in Settings.
               </Typography>
             </Alert>
           </Box>
