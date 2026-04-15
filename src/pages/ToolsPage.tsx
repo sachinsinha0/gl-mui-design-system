@@ -202,7 +202,7 @@ export default function ToolsPage() {
                     Design Mirror
                   </Typography>
                   <Chip
-                    label="v1.2"
+                    label="v1.3.7"
                     size="small"
                     color="primary"
                     variant="outlined"
