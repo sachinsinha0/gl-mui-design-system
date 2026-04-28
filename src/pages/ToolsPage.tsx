@@ -317,6 +317,26 @@ export default function ToolsPage() {
 
             <Divider sx={{ mb: 4 }} />
 
+            {/* Figma-first project setup */}
+            <Typography variant="overline" color="text.secondary" sx={{ mb: 2, display: 'block' }}>
+              Figma-first project setup (recommended)
+            </Typography>
+            <Typography variant="body2" color="text.secondary" sx={{ mb: 2, lineHeight: 1.7 }}>
+              Building a project from scratch with AI? Drop these rules into your repo so AI-generated UI imports
+              cleanly into Figma — proper auto-layout, named layers, minimal cleanup. Run once at project start:
+            </Typography>
+            <CodeBlock>{`npx design-mirror-init`}</CodeBlock>
+            <Typography variant="body2" color="text.secondary" sx={{ mt: 2, mb: 4, lineHeight: 1.7 }}>
+              Writes <code>CLAUDE.md</code> to your project root. Claude Code reads it automatically. For Cursor or
+              other tools, rename / reference as needed. See{' '}
+              <a href="https://github.com/sachinsinha0/design-mirror-init" target="_blank" rel="noopener noreferrer">
+                design-mirror-init
+              </a>{' '}
+              for options.
+            </Typography>
+
+            <Divider sx={{ mb: 4 }} />
+
             {/* Update */}
             <Typography variant="overline" color="text.secondary" sx={{ mb: 2, display: 'block' }}>
               Update to latest version
